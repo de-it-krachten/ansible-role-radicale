@@ -12,7 +12,7 @@ https://radicale.org<br>
 ## Dependencies
 
 #### Roles
-None
+- python
 
 #### Collections
 - community.general

@@ -1,5 +1,10 @@
 ---
 
+# Dependencies
+dependencies:
+  roles:
+    - python
+
 # Generic
 generic:
   role: ansible-role-radicale
