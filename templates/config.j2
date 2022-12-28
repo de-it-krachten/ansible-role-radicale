@@ -1,0 +1,7 @@
+{% for item in radicale_default_config|dict2items %}
+[{{item.key}}]
+{% for item2 in item.value|dict2items %}
+{{ item2.key }} = {{ item2.value }}
+{% endfor %}
+
+{% endfor %}

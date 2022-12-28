@@ -1,0 +1,22 @@
+---
+
+# Generic
+generic:
+  role: ansible-role-radicale
+  role_short: radicale
+  role_description: |
+    Installs & configues radicale<br>
+    Free and Open-Source CalDAV and CardDAV Server<br>
+    https://radicale.org<br>
+
+# Molecule
+molecule:
+  prepare:
+    vars:
+      activate_epel: true
+  converge:
+    roles:
+      - python
+  requirements:
+    roles_extra:
+      - python

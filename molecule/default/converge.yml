@@ -1,0 +1,11 @@
+---
+
+- name: Converge
+  hosts: all
+  become: "yes"
+  roles:
+    - python
+  tasks:
+    - name: Include role 'ansible-role-radicale'
+      ansible.builtin.include_role:
+        name: ansible-role-radicale

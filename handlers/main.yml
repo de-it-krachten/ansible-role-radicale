@@ -1,0 +1,6 @@
+---
+
+- name: Restart radicale
+  ansible.builtin.systemd:
+    name: radicale
+    state: restarted
