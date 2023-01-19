@@ -2,8 +2,7 @@
 
 # Dependencies
 dependencies:
-  roles:
-    - python
+  roles: []
 
 # Generic
 generic:
@@ -19,9 +18,8 @@ molecule:
   prepare:
     vars:
       activate_epel: true
+      install_python: true
   converge:
-    roles:
-      - python
+    roles: []
   requirements:
-    roles_extra:
-      - python
+    roles_extra: []

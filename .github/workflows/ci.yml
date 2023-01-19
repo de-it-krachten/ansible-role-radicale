@@ -294,19 +294,6 @@ jobs:
             ansible: "ansible-core>2.13,<2.14"
             ansible_lint: "ansible-lint>6,<7"
 
-          - name: fedora35_2.9
-            runs_on: ubuntu-latest
-            distro: fedora35
-            playbook: converge.yml
-            ansible: "ansible==2.9.27"
-            ansible_lint: "ansible-lint==5.4.0"
-          - name: fedora35_2.13
-            runs_on: ubuntu-latest
-            distro: fedora35
-            playbook: converge.yml
-            ansible: "ansible-core>2.13,<2.14"
-            ansible_lint: "ansible-lint>6,<7"
-
           - name: fedora36_2.9
             runs_on: ubuntu-latest
             distro: fedora36
@@ -316,6 +303,19 @@ jobs:
           - name: fedora36_2.13
             runs_on: ubuntu-latest
             distro: fedora36
+            playbook: converge.yml
+            ansible: "ansible-core>2.13,<2.14"
+            ansible_lint: "ansible-lint>6,<7"
+
+          - name: fedora37_2.9
+            runs_on: ubuntu-latest
+            distro: fedora37
+            playbook: converge.yml
+            ansible: "ansible==2.9.27"
+            ansible_lint: "ansible-lint==5.4.0"
+          - name: fedora37_2.13
+            runs_on: ubuntu-latest
+            distro: fedora37
             playbook: converge.yml
             ansible: "ansible-core>2.13,<2.14"
             ansible_lint: "ansible-lint>6,<7"

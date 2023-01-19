@@ -33,4 +33,4 @@ radicale_default_config:
 # List of python/pip packages
 radicale_pip_packages:
   - passlib
-  - bcrypt
+  - "bcrypt>3,<4"

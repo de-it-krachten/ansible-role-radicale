@@ -12,7 +12,7 @@ https://radicale.org<br>
 ## Dependencies
 
 #### Roles
-- python
+None
 
 #### Collections
 - community.general
@@ -36,8 +36,8 @@ Supported platforms
 - Ubuntu 18.04 LTS
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 35
 - Fedora 36
+- Fedora 37
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -78,7 +78,7 @@ radicale_default_config:
 # List of python/pip packages
 radicale_pip_packages:
   - passlib
-  - bcrypt
+  - "bcrypt>3,<4"
 </pre></code>
 
 
@@ -91,7 +91,6 @@ radicale_pip_packages:
   hosts: all
   become: "yes"
   roles:
-    - python
   tasks:
     - name: Include role 'radicale'
       ansible.builtin.include_role:
