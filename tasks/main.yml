@@ -1,0 +1,10 @@
+---
+
+- name: Prepare phase
+  ansible.builtin.include_tasks: prepare.yml
+
+- name: Install phase
+  ansible.builtin.include_tasks: install.yml
+
+- name: Configure phase
+  ansible.builtin.include_tasks: configure.yml

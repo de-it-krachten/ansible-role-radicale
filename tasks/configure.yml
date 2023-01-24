@@ -1,0 +1,30 @@
+---
+
+- name: Setup radicale configuration
+  ansible.builtin.template:
+    src: "{{ item }}.j2"
+    dest: "/etc/radicale/{{ item }}"
+    owner: root
+    group: "{{ radicale_group }}"
+    mode: '0640'
+  loop:
+    - config
+    - rights
+  notify: Restart radicale
+
+- name: Configure radicale to start using systemd
+  ansible.builtin.template:
+    src: "systemd.service.j2"
+    dest: "/etc/systemd/system/radicale.service"
+    owner: root
+    group: root
+    mode: "0755"
+  notify:
+    - Restart radicale
+
+- name: Ensure radicale is started at boot
+  ansible.builtin.systemd:
+    daemon_reload: true
+    name: radicale
+    state: started
+    enabled: true

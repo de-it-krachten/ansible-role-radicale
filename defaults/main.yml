@@ -1,0 +1,36 @@
+---
+
+# Version of radicale to install
+radicale_version: latest
+
+# Radicale user / group
+radicale_user: radicale
+radicale_group: radicale
+
+# Radicale collections location
+radicale_collections_dir: /var/lib/radicale/collections
+
+# Logging directory
+radicale_log_dir: /var/log/radicale
+
+# basic configuration
+radicale_default_config:
+  auth:
+    type: htpasswd
+    htpasswd_filename: /etc/radicale/users
+    htpasswd_encryption: bcrypt
+    delay: 5
+  server:
+    hosts: "127.0.0.1:5232"
+  logging:
+    level: warning
+    mask_passwords: true
+  storage:
+    filesystem_folder: "{{ radicale_collections_dir }}"
+  web:
+    type: none
+
+# List of python/pip packages
+radicale_pip_packages:
+  - passlib
+  - "bcrypt>3,<4"

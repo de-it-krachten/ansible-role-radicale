@@ -1,0 +1,31 @@
+---
+
+- name: Create radicale group
+  ansible.builtin.group:
+    name: "{{ radicale_group }}"
+    state: present
+
+- name: Create radicale user
+  ansible.builtin.user:
+    name: "{{ radicale_user }}"
+    group: "{{ radicale_group }}"
+    create_home: false
+    system: true
+    shell: /sbin/nologin
+    state: present
+
+- name: Create radicale configuration path
+  ansible.builtin.file:
+    path: /etc/radicale
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Create radicale collections path
+  ansible.builtin.file:
+    path: "{{ radicale_collections_dir }}"
+    state: directory
+    owner: "{{ radicale_user }}"
+    group: "{{ radicale_group }}"
+    mode: "0770"
