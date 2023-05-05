@@ -90,7 +90,6 @@ radicale_pip_packages:
 - name: sample playbook for role 'radicale'
   hosts: all
   become: "yes"
-  roles:
   tasks:
     - name: Include role 'radicale'
       ansible.builtin.include_role:
