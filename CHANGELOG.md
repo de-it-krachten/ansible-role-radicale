@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/de-it-krachten/ansible-role-radicale/compare/v1.0.0...v1.1.0) (2023-08-14)
+
+
+### Features
+
+* Update supported platforms & CI ([981343b](https://github.com/de-it-krachten/ansible-role-radicale/commit/981343bd241253b83a2d6b7553af188a9e8bd01d))
+
 # 1.0.0 (2023-01-24)
 
 
