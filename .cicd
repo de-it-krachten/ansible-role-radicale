@@ -965,9 +965,9 @@ platforms:
         box: jborean93/WindowsServer2022
         groups:
           - windows
-#        interfaces:
-#          - network_name: private_network
-#            type: dhcp
+        interfaces:
+          - network_name: private_network
+            type: dhcp
   win2025:
     name: Windows Server 2025
     ci: false
@@ -1045,7 +1045,7 @@ github:
 gitlab:
   active: false
 
-# Axure DevOps
+# Azure DevOps
 ado:
   active: false
 

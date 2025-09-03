@@ -38,6 +38,6 @@ radicale_os_packages: []
 
 # List of python/pip packages
 radicale_pip_packages:
- - passlib
- - "bcrypt>3,<4"
- - radicale
+  - passlib
+  - "bcrypt>3,<4"
+  - radicale

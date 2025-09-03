@@ -79,10 +79,17 @@ radicale_default_config:
   web:
     type: none
 
+# Radicale installtion root
+radicale_venv_root: /usr/local/venv/radicale
+
+# List of OS packages
+radicale_os_packages: []
+
 # List of python/pip packages
 radicale_pip_packages:
-  - passlib
-  - "bcrypt>3,<4"
+ - passlib
+ - "bcrypt>3,<4"
+ - radicale
 </pre></code>
 
 

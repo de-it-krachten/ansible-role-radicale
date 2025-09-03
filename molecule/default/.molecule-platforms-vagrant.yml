@@ -143,6 +143,7 @@
   ci: false
   box: jborean93/WindowsServer2022
   groups: ['windows']
+  interfaces: [{'network_name': 'private_network', 'type': 'dhcp'}]
 - name: win2025
   ci: false
   box: jborean93/WindowsServer2025
