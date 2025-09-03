@@ -1,0 +1,18 @@
+---
+
+- name: Create virtualenv
+  ansible.builtin.pip:
+    name: "{{ venv_base_packages }}"
+    virtualenv: "{{ venv_root }}"
+    virtualenv_command: "python3 -m venv"
+    extra_args: --upgrade
+  vars:
+    venv_base_packages:
+      - pip
+      - wheel
+      - setuptools
+
+- name: Install packages
+  ansible.builtin.pip:
+    name: "{{ venv_packages }}"
+    virtualenv: "{{ venv_root }}"
