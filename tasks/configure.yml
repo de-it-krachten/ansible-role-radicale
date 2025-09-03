@@ -22,6 +22,14 @@
   notify:
     - Restart radicale
 
+- name: Create users file
+  ansible.builtin.file:
+    path: /etc/radicale/users
+    state: touch
+    mode: "0644"
+    modification_time: preserve
+    access_time: preserve
+
 - name: Ensure radicale is started at boot
   ansible.builtin.systemd:
     daemon_reload: true
