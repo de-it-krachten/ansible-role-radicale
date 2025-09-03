@@ -1,3 +1,19 @@
+# [1.4.0](https://github.com/de-it-krachten/ansible-role-radicale/compare/v1.3.0...v1.4.0) (2025-09-03)
+
+
+### Bug Fixes
+
+* Move radicale into virtualenv ([34dbfa6](https://github.com/de-it-krachten/ansible-role-radicale/commit/34dbfa6a86f02c55bd22160a9a06eebf8a298fb5))
+
+
+### Features
+
+* Add support for AlmaLinux 10 ([fde2848](https://github.com/de-it-krachten/ansible-role-radicale/commit/fde2848475ef5a871992032a13aac89f8d74b9ff))
+* Add support for Debian 13 (Trixie) ([b44a862](https://github.com/de-it-krachten/ansible-role-radicale/commit/b44a86221a3632ef82cc12f8473f24f11bf669ba))
+* Add support for OracleLinux 10 ([1bc9492](https://github.com/de-it-krachten/ansible-role-radicale/commit/1bc9492d385392950b1db8d5a1451258cad931f4))
+* Add support for Red Hat Enterprise Linux 10 ([74c6697](https://github.com/de-it-krachten/ansible-role-radicale/commit/74c66971df80a3e25d461e4bf6c7b27368dfcd83))
+* Add support for RockyLinux 10 ([b551405](https://github.com/de-it-krachten/ansible-role-radicale/commit/b5514052225cfe5348177d13f656ffcb5e2969d5))
+
 # [1.3.0](https://github.com/de-it-krachten/ansible-role-radicale/compare/v1.2.0...v1.3.0) (2024-12-29)
 
 
