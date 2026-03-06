@@ -14,6 +14,9 @@ galaxy_info:
         - '8'
         - '9'
         - '10'
+    - name: SLES
+      versions:
+        - all
     - name: opensuse
       versions:
         - all
@@ -27,5 +30,6 @@ galaxy_info:
         - jammy
     - name: Fedora
       versions:
-        - all
+        - '42'
+        - '43'
 dependencies: []

@@ -41,7 +41,9 @@
       - almalinux8
       - almalinux9
       - sles15
+      - sles16
       - opensuse15
+      - opensuse16
 
     systemctl_alternative: False
     activate_epel: True
@@ -185,9 +187,8 @@
         - name: Install default packages
           ansible.builtin.package:
             name:
-              - lsb
+              - lsb-release
               - iproute
-              - python-xml
               - python3-xml
               - python3-rpm
               - unzip
