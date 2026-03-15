@@ -1,3 +1,13 @@
+# [1.5.0](https://github.com/de-it-krachten/ansible-role-radicale/compare/v1.4.0...v1.5.0) (2026-03-15)
+
+
+### Features
+
+* Added support for Fedora 43 ([1961954](https://github.com/de-it-krachten/ansible-role-radicale/commit/19619541a1f278c8249ae730837b43477c12c84d))
+* Drop support for Fedora 41 ([67f0bea](https://github.com/de-it-krachten/ansible-role-radicale/commit/67f0beaf08b3d7f9b91c82a4f243215bdbeb76b2))
+* Drop support for openSUSE Leap 15 ([e5b05a9](https://github.com/de-it-krachten/ansible-role-radicale/commit/e5b05a9a88a942c47f78e16f1c509a0638ffa71e))
+* Drop support for SUSE Linux Enterprise 15 ([d397953](https://github.com/de-it-krachten/ansible-role-radicale/commit/d3979539ae8b2a6089cf8eb9183d0972b9cb6b76))
+
 # [1.4.0](https://github.com/de-it-krachten/ansible-role-radicale/compare/v1.3.0...v1.4.0) (2025-09-03)
 
 
