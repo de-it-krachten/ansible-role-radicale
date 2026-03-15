@@ -33,18 +33,17 @@ Supported platforms
 - AlmaLinux 8
 - AlmaLinux 9
 - AlmaLinux 10
-- SUSE Linux Enterprise 15<sup>1</sup>
-- openSUSE Leap 15
 - Debian 11 (Bullseye)
 - Debian 12 (Bookworm)
 - Debian 13 (Trixie)
 - Ubuntu 22.04 LTS
 - Ubuntu 24.04 LTS
-- Fedora 41
 - Fedora 42
+- Fedora 43
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
+
 
 ## Role Variables
 ### defaults/main.yml
@@ -87,9 +86,9 @@ radicale_os_packages: []
 
 # List of python/pip packages
 radicale_pip_packages:
- - passlib
- - "bcrypt>3,<4"
- - radicale
+  - passlib
+  - "bcrypt>3,<4"
+  - radicale
 </pre></code>
 
 
