@@ -18,35 +18,6 @@ defaults:
     working-directory: "de-it-krachten/ansible-role-radicale"
 
 
-# Create list of platforms with CI active
-
-# Get intersect of CI platforms & default platforms for phase1
-
-__platforms_ci:
-- rockylinux8
-- rockylinux9
-- rockylinux10
-- oraclelinux8
-- oraclelinux9
-- oraclelinux10
-- almalinux8
-- almalinux9
-- almalinux10
-- debian11
-- debian12
-- debian13
-- ubuntu2204
-- ubuntu2404
-- ubuntu2604
-- fedora43
-
-
-__platforms_phase1:
-- ubuntu2604
-- rockylinux10
-
-
-
 
 
 jobs:
