@@ -18,6 +18,37 @@ defaults:
     working-directory: "de-it-krachten/ansible-role-radicale"
 
 
+# Create list of platforms with CI active
+
+# Get intersect of CI platforms & default platforms for phase1
+
+__platforms_ci:
+- rockylinux8
+- rockylinux9
+- rockylinux10
+- oraclelinux8
+- oraclelinux9
+- oraclelinux10
+- almalinux8
+- almalinux9
+- almalinux10
+- debian11
+- debian12
+- debian13
+- ubuntu2204
+- ubuntu2404
+- ubuntu2604
+- fedora43
+
+
+__platforms_phase1:
+- ubuntu2604
+- rockylinux10
+
+
+
+
+
 jobs:
 
   lint:
@@ -202,6 +233,7 @@ jobs:
           yamllint .
           /usr/local/bin/ansible-lint.sh -f readable
 
+
   molecule1:
     name: "${{ matrix.name }}"
     runs-on: "${{ matrix.runs_on }}"
@@ -211,16 +243,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: rockylinux10
-            runs_on: ubuntu-22.04
-            distro: rockylinux10
-            playbook: converge.yml
-            venv: "ansiblecore220"
-            ansible: "ansible-core>2.20,<2.21"
-            ansible_lint: "ansible-lint"
-            python: "3.13"
-            hetznercloud: True
-
           - name: ubuntu2604
             runs_on: ubuntu-22.04
             distro: ubuntu2604
@@ -229,7 +251,17 @@ jobs:
             ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
-            hetznercloud: True
+            hetznercloud: False
+
+          - name: rockylinux10
+            runs_on: ubuntu-22.04
+            distro: rockylinux10
+            playbook: converge.yml
+            venv: "ansiblecore220"
+            ansible: "ansible-core>2.20,<2.21"
+            ansible_lint: "ansible-lint"
+            python: "3.13"
+            hetznercloud: False
 
 
     steps:
@@ -368,7 +400,7 @@ jobs:
         run: |
           ansible="${{ matrix.venv }}"
           source /usr/local/venv/$ansible/bin/activate
-          /usr/local/bin/molecule-test.sh -A
+          /usr/local/bin/molecule-test.sh -A -x -v
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
@@ -376,7 +408,6 @@ jobs:
           MOLECULE_PLAYBOOK: ${{ matrix.playbook }}
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           MOLECULE_DRIVER: ${{ vars.MOLECULE_DRIVER }}
-
   molecule2:
     name: "${{ matrix.name }}"
     runs-on: "${{ matrix.runs_on }}"
@@ -394,7 +425,7 @@ jobs:
             ansible: "ansible-core>2.16,<2.17"
             ansible_lint: "ansible-lint>25,<25.11"
             python: "3.12"
-            hetznercloud: True
+            hetznercloud: False
 
           - name: rockylinux9
             runs_on: ubuntu-22.04
@@ -404,7 +435,7 @@ jobs:
             ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
-            hetznercloud: True
+            hetznercloud: False
 
           - name: oraclelinux8
             runs_on: ubuntu-22.04
@@ -474,7 +505,7 @@ jobs:
             ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
-            hetznercloud: True
+            hetznercloud: False
 
           - name: debian12
             runs_on: ubuntu-22.04
@@ -484,7 +515,7 @@ jobs:
             ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
-            hetznercloud: True
+            hetznercloud: False
 
           - name: debian13
             runs_on: ubuntu-22.04
@@ -494,7 +525,7 @@ jobs:
             ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
-            hetznercloud: True
+            hetznercloud: False
 
           - name: ubuntu2204
             runs_on: ubuntu-22.04
@@ -504,7 +535,7 @@ jobs:
             ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
-            hetznercloud: True
+            hetznercloud: False
 
           - name: ubuntu2404
             runs_on: ubuntu-22.04
@@ -514,7 +545,7 @@ jobs:
             ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
-            hetznercloud: True
+            hetznercloud: False
 
           - name: fedora43
             runs_on: ubuntu-22.04
@@ -524,7 +555,7 @@ jobs:
             ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
-            hetznercloud: True
+            hetznercloud: False
 
 
     steps:
@@ -663,7 +694,7 @@ jobs:
         run: |
           ansible="${{ matrix.venv }}"
           source /usr/local/venv/$ansible/bin/activate
-          /usr/local/bin/molecule-test.sh -A
+          /usr/local/bin/molecule-test.sh -A -x -v
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
