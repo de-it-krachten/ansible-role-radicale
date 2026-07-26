@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/de-it-krachten/ansible-role-radicale/compare/v1.5.0...v1.6.0) (2026-07-26)
+
+
+### Features
+
+* Added support for Fedora 44 ([f616008](https://github.com/de-it-krachten/ansible-role-radicale/commit/f6160088115517c2c1fc32ed77baa8f159dcadd0))
+* Added support for Ubuntu 26.04 LTS ([8c87556](https://github.com/de-it-krachten/ansible-role-radicale/commit/8c87556d6f540690cfc493f0b1627ffdeee7b4b3))
+* Drop support for Fedora 42 ([8c93bb8](https://github.com/de-it-krachten/ansible-role-radicale/commit/8c93bb8afe67519dd0825da0e2a8b161cfc5406e))
+
 # [1.5.0](https://github.com/de-it-krachten/ansible-role-radicale/compare/v1.4.0...v1.5.0) (2026-03-15)
 
 
